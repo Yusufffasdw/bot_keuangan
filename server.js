@@ -107,7 +107,7 @@ app.post('/webhook', (req, res) => {
     }
 
     sessions[phone] = { step: 'wait_keterangan', type: sess.type, amount };
-    const contoh = sess.type === 'saldo' ? 'Saldo awal, Tabungan' : sess.type === 'pemasukan' ? 'Gaji, Freelance' : 'Makan siang, Bensin';
+    const contoh = sess.type === 'saldo' ? 'Saldo awal, Tabungan' : sess.type === 'pemasukan' ? '-' : '-';
     return replyWA(res,
       `✏️ Keterangan untuk ${fmtRupiah(amount)} ini?\n\n_Contoh: ${contoh}_`
     );
